@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Cleaning database..."
+Country.destroy_all
+
+puts "Creating countries..."
+japan = {name: "Japan"}
+korea = {name: "Korea"}
+singapore = {name: "Singapore"}
+
+countries = [japan, korea, singapore]
+
+countries.each do |attributes|
+  country = Country.create!(attributes)
+  puts "Created #{country.name}"
+end
+
+puts "Finished!"
