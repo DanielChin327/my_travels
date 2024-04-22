@@ -1,0 +1,6 @@
+<h1>New Post</h1>
+<%= simple_form_for [@country, @post] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.submit "Create New Post", class: "btn btn-primary" %>
+<% end %>

@@ -3,8 +3,13 @@
 <%= render @country %>
 
 <div>
-  <%= link_to "Edit this country", edit_country_path(@country) %> |
   <%= link_to "Back to countries", countries_path %>
-
-  <%= button_to "Destroy this country", @country, method: :delete %>
 </div>
+
+<p><strong>Posts</strong></p>
+<ul class="list-group">
+  <% @country.posts.each do |review| %>
+    <li class="list-group-item"><%= post.title %></li>
+  <% end %>
+</ul>
+<br>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :countries, only: [:index, :show] do
     resources :posts
   end
-
+  resources :posts, only: [:destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

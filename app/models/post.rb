@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
-  has_many :posts, dependent: :destroy
   belongs_to :country
+
+  validates :title, presence: true
+  validates :body, presence: true
 end
