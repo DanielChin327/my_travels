@@ -5,14 +5,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(review_params)
-    @post.restaurant = @post
+    @post = Post.new(post_params)
+    @country = Country.find(params[:country_id])
+
+    # Below is the same as @post.country_id = @country.id
+    @post.country = @country
     if @post.save
       redirect_to country_path(@country)
     else
       render :new, status: :unprocessable_entity
       # This makes it so that 422 HTTP Status occurs if there is an issue with the post
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @country = @post.country
   end
 
   def destroy
@@ -24,7 +32,7 @@ class PostsController < ApplicationController
   private
 
   def set_country
-    @country = Country.find(params[:restaurant_id])
+    @country = Country.find(params[:country_id])
   end
 
   def post_params

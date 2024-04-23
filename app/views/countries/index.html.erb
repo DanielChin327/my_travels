@@ -1,6 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Countries</h1>
+<div class="country-page">
+<div class="banner" >
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
+
+<div class = "intro">
+<p>I wanted a place where I could document and record places that I had travelled to. Some of these places are pretty well known. Others were just mundane places that I enjoyed. Hopefully, in time, others can use this website and get some of their own ideas</p>
+</div>
 
 <div id="countries">
   <% @countries.each do |country| %>
@@ -9,4 +23,5 @@
       <%= link_to "Show this country", country %>
     </p>
   <% end %>
+</div>
 </div>
