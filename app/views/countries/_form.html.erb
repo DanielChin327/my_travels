@@ -1,25 +1,17 @@
 
-<%= simple_form_for(@country) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
+<div class="container">
+  <div class="mx-auto" style="max-width: 500px;"> <!-- Adjust max-width as needed -->
+    <%= simple_form_for(@country, html: { class: 'needs-validation', novalidate: true }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-group">
+        <%= f.input :name, wrapper: false, label_html: { class: 'form-label' }, input_html: { class: 'form-control mb-3' } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-
-<%= simple_form_for(@country, html: { class: 'needs-validation', novalidate: true }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-group">
-    <%= f.input :name, wrapper: false, label_html: { class: 'form-label' }, input_html: { class: 'form-control mb-3' } %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  </div>
-<% end %>
+</div>

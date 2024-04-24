@@ -1,11 +1,14 @@
-// app/assets/stylesheets/application.scss or a specific component style file
-@import 'bootstrap';
 
 .form-group {
   margin-bottom: 15px; // Adjust spacing between form groups
+  display: flex;           // Enables flexbox
+  flex-direction: column;  // Stacks children vertically
+  align-items: center;     // Centers items horizontally in the container
+  justify-content: center; // Centers items vertically in the container
+  width: 100%;             // Sets the width of the .intro container to full width
 
   .form-label {
-    color: $primary-color; // Assuming $primary-color is defined in your variables
+    color: $success; // Assuming $primary-color is defined in your variables
   }
 
   .form-control {
@@ -15,8 +18,7 @@
 }
 
 .btn-primary {
-  background-color: $theme-color; // Customize the primary button color
   &:hover {
-    background-color: darken($theme-color, 10%); // Darken the button on hover
+    background-color: darken($success, 10%); // Darken the button on hover
   }
 }
