@@ -11,3 +11,15 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+<%= simple_form_for(@country, html: { class: 'needs-validation', novalidate: true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :name, wrapper: false, label_html: { class: 'form-label' }, input_html: { class: 'form-control mb-3' } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>

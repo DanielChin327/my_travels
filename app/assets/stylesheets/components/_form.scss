@@ -1,0 +1,22 @@
+// app/assets/stylesheets/application.scss or a specific component style file
+@import 'bootstrap';
+
+.form-group {
+  margin-bottom: 15px; // Adjust spacing between form groups
+
+  .form-label {
+    color: $primary-color; // Assuming $primary-color is defined in your variables
+  }
+
+  .form-control {
+    border-radius: 0.25rem; // Customize border-radius of input fields
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; // Smooth transition for focus
+  }
+}
+
+.btn-primary {
+  background-color: $theme-color; // Customize the primary button color
+  &:hover {
+    background-color: darken($theme-color, 10%); // Darken the button on hover
+  }
+}
