@@ -1,0 +1,28 @@
+.post-show {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px; // Adjust based on your preference
+  margin: 0 auto;
+  padding: 20px;
+
+  .post-image {
+    flex: 1 1 25%; // Takes up 25% of the flex container width
+    width: 100%; // Makes the image responsive within its container
+    object-fit: cover; // Ensures the image covers the area without distorting
+    height: 300px; // Set a fixed height for a square look
+    margin-right: 20px;
+  }
+
+  .post-content {
+    flex: 1 1 75%; // Takes up the remaining 75% of the flex container width
+    display: block;
+
+    h1, p {
+      margin: 0 0 10px;
+    }
+
+    .btn {
+      margin-top: 20px;
+    }
+  }
+}
