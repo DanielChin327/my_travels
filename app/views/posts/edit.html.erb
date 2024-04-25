@@ -1,0 +1,7 @@
+<h1>Edit Post</h1>
+<%= simple_form_for [@country, @post] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.input :image, as: :file %>
+  <%= f.button :submit, "Update Post", class: "btn btn-primary" %>
+<% end %>
