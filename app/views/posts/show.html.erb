@@ -1,8 +1,17 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
-
 <%= link_to 'Back to Country', country_path(@country) %>
 
+<div class="post-show">
+  <% if @post.image.attached? %>
+    <%= image_tag @post.image, class: "post-image" %>
+  <% end %>
+  <div class="post-content">
+    <h1><%= @post.title %></h1>
+    <p><%= @post.body %></p>
+
+  </div>
+</div>
+
+  <%= link_to 'Back to Country', country_path(@country), class: "btn btn-secondary" %>
 <%= link_to 'Delete Post', country_post_path(@country, @post),
             data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?" },
             class: "btn btn-danger" %>

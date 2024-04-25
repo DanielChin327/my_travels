@@ -7,14 +7,19 @@
 </div>
 
 <p><strong>Posts</strong></p>
-<ul class="list-group">
-  <% @country.posts.each do |post| %>
-    <li class="list-group-item">
-    <%= link_to post.title, country_post_path(@country, post) %>
 
-    </li>
-  <% end %>
-</ul>
-<br>
+<% @country.posts.each do |post| %>
+  <div class="card-trip">
+    <%= image_tag post.image, class: "card-trip-image" if post.image.attached? %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= post.title %></h2>
+        <p><%= truncate(post.body, length: 100) %></p>
+      </div>
+      <%= link_to "View Details", country_post_path(@country, post), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+
 
 <%= link_to 'Add New Post', new_country_post_path(@country), class: "btn btn-success" %>
