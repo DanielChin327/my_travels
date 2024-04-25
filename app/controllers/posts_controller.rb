@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+  def show
+    @post = Post.find(params[:id])
+    @country = @post.country
+  end
+
   def new
     @country = Country.find(params[:country_id])
     @post = Post.new
@@ -18,9 +23,19 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
+  def edit
     @post = Post.find(params[:id])
     @country = @post.country
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @country = @post.country
+    if @post.update(post_params)
+      redirect_to country_post_path(@country, @post), notice: "Post was successful"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -28,6 +43,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to country_path(@post.country), status: :see_other
   end
+
 
   private
 

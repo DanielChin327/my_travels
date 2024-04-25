@@ -12,6 +12,7 @@
 </div>
 
   <%= link_to "Back to #{@country.name}", country_path(@country), class: "btn btn-secondary" %>
-<%= link_to 'Delete Post', country_post_path(@country, @post),
+  <%= link_to 'Edit Post', edit_country_post_path(@country, @post), class: "btn btn-primary" %>
+  <%= link_to 'Delete Post', country_post_path(@country, @post),
             data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this post?" },
             class: "btn btn-danger" %>
