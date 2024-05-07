@@ -10,6 +10,11 @@ class CountriesController < ApplicationController
   def show
   end
 
+
+
+  # UNTIL TRAVELLING TO NEW COUNTRIES, COMMENT OUT
+
+
   # # GET /countries/new
   # def new
   #   @country = Country.new
