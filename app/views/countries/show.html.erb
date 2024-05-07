@@ -4,6 +4,7 @@
 
 <p><strong>Posts</strong></p>
 
+<div class = "card-trips">
 <% @country.posts.each do |post| %>
   <div class="card-trip">
     <%= image_tag post.image, class: "card-trip-image" if post.image.attached? %>
@@ -16,6 +17,6 @@
     </div>
   </div>
 <% end %>
-
+</div>
 
 <%= link_to 'Add New Post', new_country_post_path(@country), class: "btn btn-success" %>
