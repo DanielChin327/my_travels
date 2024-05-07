@@ -9,7 +9,14 @@
         <li class="nav-item">
         </li>
         <!-- Additional links can be added here -->
-
+ <%= link_to 'Home', root_path, class: 'nav-link btn btn-secondary' %>
+        </li>
+        <!-- Dynamic country links -->
+        <% @countries.each do |country| %>
+          <li class="nav-item">
+            <%= link_to country.name, country_path(country), class: "nav-link btn btn-secondary" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
